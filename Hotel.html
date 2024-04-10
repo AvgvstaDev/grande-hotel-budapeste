@@ -1,0 +1,173 @@
+<html>
+
+<head>
+
+	<script>
+	
+		const hotel = "Grande Hotel Budapeste"; // nome do Hotel
+		alert(`Bem vindo(a) ao ${hotel}!`);
+		var nomeFuncionario = prompt("Insira o nome de usuário:");
+
+		function autenticacao() {
+		
+		var senha = parseInt(prompt("Insira a senha:"));
+
+		if(senha !== 2678) {
+			alert("Tente novamente");
+			autenticacao();
+			
+		} else {
+			alert(`Bem vindo(a) ao ${hotel}, ${nomeFuncionario}. É um imenso prazer ter você por aqui!`)
+		}
+		
+		}
+
+		function inicio() {
+
+			var escolha = parseInt(prompt("Selecione uma opção \n 1) Reserva de Quartos \n 2) Cadastro de Hóspedes \n 3) Abastecimento de Carros \n 4) Sair"));
+
+			switch (escolha) {
+				case 1:
+					reserva_quartos();
+					break;
+				case 2:
+					cadastro_hospedes();
+					break;
+				case 3:
+					abastecer_carros();
+					break;
+				case 4:
+					sair();
+					break;
+				default:
+					erro();
+			}
+		}		
+
+		function reserva_quartos() {
+
+			alert(`${hotel} - RESERVA DE QUARTOS`);
+
+			var custoDiaria = parseFloat(prompt("Qual o valor padrão da diária?"));
+
+			if (isNaN(custoDiaria) || custoDiaria === " " || custoDiaria <= 0) {
+				alert(`Valor inválido, ${nomeFuncionario}.`);
+				reserva_quartos();
+			} 
+
+			var diaria = parseInt(prompt("Quantas diárias serão necessárias?"));
+
+			if (isNaN(diaria) || diaria === " " || diaria <= 0 || diaria > 30) {
+				alert(`Valor inválido, ${nomeFuncionario}.`);
+				reserva_quartos();
+			} 
+
+			let nomeHospede = prompt("Qual o nome do hóspede?");
+
+			function escolhaQuarto () {
+
+			var quartos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+			var quartoAlugado = parseInt(prompt("Qual o quarto para reserva? (1 - 20)"));
+			var i = quartoAlugado;
+
+			if (isNaN(i) || i === " " || i <= 0 || i >= 21) {
+				alert(`Resposta inválida, ${nomeFuncionario}.`);
+				escolhaQuarto();
+			} else if (quartos.includes(i)) {
+				alert("Quarto Livre.")
+			} else {
+				alert("Quarto já está ocupado.")
+				escolhaQuarto();
+			}	}
+			escolhaQuarto()
+
+			var conclusao = prompt(`${nomeFuncionario}, você confirma a hospedagem para ${nomeHospede} 
+			por ${diaria} dias para o quarto ${i} por ${custoDiaria} ? \n Digite S para sim e N para não:`)
+
+			if (conclusao == S || conclusao == s || conclusao == Sim || conclusao == sim) {
+				alert(`${nomeFuncionario}, reserva efetuada para ${nomeHospede}.`)
+				quartos.splice(i,1)
+			} 
+
+			
+			inicio(); 
+
+		}
+
+		function cadastro_hospedes() {
+			alert(`${hotel} - CADASTRO DE HÓSPEDES`);
+
+			
+			var padraoDiaria = parseFloat(prompt("Qual o valor padrão da diária?"));
+			var gratuidade = 0;
+			var meiaDiaria = 0;
+			var totalDiarias = 0;
+
+			function hospede() {
+			 var nomeHospede = prompt("Qual o nome do Hóspede?");
+
+			 if (nomeHospede === "PARE") {
+				return false;
+			 } else {
+				return true;
+			 }
+
+
+			 if (true) {
+				
+				let idadeHospede = prompt("Qual a idade do Hóspede?");
+				
+
+				if (idadeHospede < 6) {
+					alert(`${nomeHospede} cadastrada(o) com sucesso. ${nomeHospede} possui gratuidade.`)
+					gratuidade++
+				} else if (idadeHospede > 60) {
+					alert(`${nomeHospede} cadastrada(o) com sucesso. ${nomeHospede} paga meia.`)
+					meiaDiaria++
+					totalDiarias += (padraoDiaria/2)
+					
+				} else {
+					alert(`${nomeHospede} cadastrada(o) com sucesso.`)
+					totalDiarias += padraoDiaria
+				} 
+
+				hospede()
+				} else if (false) {
+					alert(`${nomeFuncionario}, o valor total das hospedagens é: ${totalDiarias}; ${gratuidade} gratuidade(s); ${meiaDiaria} meia(s)`);
+					inicio();}
+			}
+			
+			hospede()
+		}
+
+		function abastecer_carros() {
+			alert(`${hotel} - ABASTECER`);
+			inicio();
+		}
+
+		function erro() {
+			alert("Por favor, informe um número entre 1 e 4");
+			inicio();
+		}
+
+		function sair() {
+			var confirma = confirm("Você deseja sair?");
+			if (confirma) {
+				alert(`Muito obrigado e até logo, ${nomeFuncionario}!`)
+				window.close();
+			} else {
+				inicio();
+			}
+		}
+
+		
+		autenticacao()
+		inicio();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
