@@ -24,7 +24,7 @@
 
 		function inicio() {
 
-			var escolha = parseInt(prompt("Selecione uma opção \n 1) Reserva de Quartos \n 2) Cadastro de Hóspedes \n 3) Abastecimento de Carros \n 4) Sair"));
+			var escolha = parseInt(prompt("Selecione uma opção \n 1) Reserva de Quartos \n 2) Cadastro de Hóspedes \n 3) Abastecimento de Carros \n 4) Cadastro de Eventos \n 5) Sair"));
 
 			switch (escolha) {
 				case 1:
@@ -37,6 +37,9 @@
 					abastecer_carros();
 					break;
 				case 4:
+					cadastro_eventos();
+					break;
+				case 5:
 					sair();
 					break;
 				default:
@@ -145,8 +148,75 @@
 			inicio();
 		}
 
+		function cadastro_eventos() {
+
+			var assentos = prompt("Qual o número de convidados para o seu evento?")
+			var colorado = "Auditório Colorado";
+			var laranja = "Auditório Laranja";
+
+			if(assentos > 350 || assentos <= 0 || assentos === "" || isNaN(assentos)) {
+				alert("Número de convidados inválido")
+				cadastro_eventos()
+			} else if (assentos <= 150) {
+				alert(`Use o ${laranja}.`)
+			} else if (assentos > 150 && assentos <= 220) {
+				var adicionais = (assentos-150)
+				alert(`Use o ${laranja} (inclua mais ${adicionais} cadeiras).`)
+			} else {
+				alert(`Use o ${colorado}.`)
+			}
+
+			var diaReserva = prompt("Qual o dia do seu evento?");
+			var horaReserva = prompt("Qual a hora do seu evento?"); 
+			var diasUteis = ["segunda", "terça", "quarta", "quinta", "sexta"];
+			var finalSemana = ["sabado", "domingo"];
+
+
+			if (finalSemana.includes(diaReserva) && (horaReserva < 7 || horaReserva > 15)) {
+				alert("Auditório Indisponível.")
+				inicio()
+			} else if (diasUteis.includes(diaReserva) && (horaReserva < 7 || horaReserva > 23)) {
+				alert("Auditório Indisponível.")
+				inicio()
+			} 
+
+			var nomeEmpresa = prompt("Qual o nome da empresa?")
+			alert(`Auditório reservado para ${nomeEmpresa}. ${diaReserva[0].toUpperCase() + diaReserva.substring(1)} às ${horaReserva}hs.`)
+
+			var salarioGarcom = 10.5;
+			var duracaoEvento = parseInt(prompt(("Qual a duração do evento em horas?")));
+			var garcom = Math.ceil((assentos/12) + (duracaoEvento/2));
+			var custo = garcom * salarioGarcom
+
+			alert(`São necessários ${garcom} garçons.`);
+			alert(`Custo: R$ ${Math.round(custo)}`);
+			alert("Agora vamos calcular o custo do buffet do hotel para o evento.")
+
+			var quantidadeCafe = 0.2 * assentos;
+			var quantidadeAgua = 0.5 * assentos;
+			var quantidadeSalgado = 7 * assentos;
+			var custoComida = mathRound(((quantidadeCafe * 0.8) + (quantidadeAgua * 0.4) + (quantidadeSalgado * 34)));
+
+			alert(`O evento precisará de ${quantidadeCafe} litros de café, ${quantidadeAgua} litros de água e ${quantidadeSalgado} salgados.`)
+
+			alert(`RELATÓRIO 
+			\n Evento no Auditório Colorado.
+Nome da Empresa: Hotel Transivânia.
+Data: Segunda, 13H às 21h.
+Duração do evento: 8H.
+Quantidade de garçons: 48.
+Quantidade de Convidados: 192
+
+Custo do garçons: R$504.00
+Custo do Buffet: R$274.00
+
+Valor total do Evento: R$ 778.00
+`)
+			inicio()
+		}
+
 		function erro() {
-			alert("Por favor, informe um número entre 1 e 4");
+			alert("Por favor, informe um número entre 1 e 5");
 			inicio();
 		}
 
