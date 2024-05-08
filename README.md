@@ -3,7 +3,7 @@
 💡 A atividade abaixo foi proposta pelo Professor Gabriel Augusto durante o curso do Instituto PROA visando a aprendizagem de Lógica de Programação com JavaScript.
 
 
-## Conceito da atividade 
+## Objetivo da atividade 
 
 Hora de pensar!
 Hoje vamos desenvolver um programa feito com vários outros programas utilizando um conceito de software modulado, feito com partes independentes. 
