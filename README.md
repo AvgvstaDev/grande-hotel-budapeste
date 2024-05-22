@@ -30,7 +30,7 @@ Depois disso... De acordo com cada uma das solicitações abaixo, adapte o progr
 
 Agora vamos para a parte que interessa! 
 
-### 1) Quantos quartos são?
+### 1) Quantos quartos são? 🏨
 
 Todo hotel precisava reservar quartos. 
 Então vamos começar por isso. 
@@ -86,7 +86,7 @@ Programa pergunta   =>  "Qual o valor padrão da diária?"
 <br>Programa exibe      =>  "{Nome}, reserva efetuada para Carlos Moreira.."
 
 
-### 2) Como soletra?
+### 2) Como soletra? 🅰️🅱️
 
 Aqui vamos tratar do cadastro de hóspedes. 
 Imagine que uma família acaba de chegar ao balcão do hotel e quer se hospedar. 
@@ -133,7 +133,7 @@ Programa pergunta   => "Qual o valor padrão da diária?"
 <br>Resposta do usuário => PARE
 <br>Programa exibe      => "{Nome}, o valor total das hospedagens é: R$250; 1 gratuidade(s); 1 meia(s)"
 
-### 3) Com "S" ou com "Z"?
+### 3) Com "S" ou com "Z"?  🇸 🇿
 
 Aqui vamos tratar do cadastro de hóspedes, mas de uma forma diferente. 
 Como no programa anterior, imagine que uma família acaba de chegar ao balcão do hotel e quer se hospedar. 
@@ -174,7 +174,7 @@ Programa pergunta   =>  "Selecione uma opção: 1. Cadastrar - 2. Pesquisar - 3.
 <br>Programa exibe      => "Hóspede Eleanor Fernandes não foi encontrada(o)!"
 <br>Programa pergunta   => "Selecione uma opção: 1. Cadastrar - 2. Pesquisar - 3. Sair"
 
-### 4) Que horas você pode?
+### 4) Que horas você pode? 🕑 
 Neste cenário, o hotel receberá não hóspedes, mas eventos. 
 Eventos são grandes e complexos, por isso precisamos pensar em diversas situações.
 Leia atentamente tudo o que é solicitado.
@@ -315,7 +315,7 @@ Programa pergunta    =>  "Gostaria de efetuar a reserva? S/N"
 <br>Resposta do usuário  =>  S
 <br>Programa exibe       =>  "{Nome}, reserva efetuada com sucesso."
 
-### 5) Álcool ou gasolina?
+### 5) Álcool ou gasolina? ⛽
 
 O hotel tem um carro para levar seus hóspedes a passeios. O carro é sempre abastecido pelo hotel que tem convênios com dois postos de Gasolina: o Wayne Oil e o Stark Petrol. Os carros podem ser abastecidos tanto com álcool quanto gasolina, mas os preços têm flutuado bastante, então é necessário que que um funcionário cheque qual o posto mais em conta para abastecimento. 
 
@@ -334,20 +334,19 @@ Programa pergunta   =>  "Qual o valor do álcool no posto Wayne Oil?"
 <br>Resposta do usuário =>  6.17
 <br>Programa exibe      =>  "{Nome}, é mais barato abastecer com gasolina no posto Wayne Oil".
 
-### 6) Ar puro, finalmente.
+### 6) Ar puro, finalmente. 💨
 
 A manutenção dos ar-condicionados no hotel é realizada por empresas terceirizadas que, em alguns casos, oferecem desconto quando o serviço é realizado em uma quantidade determinada de aparelhos. 
 
 Dentro desse contexto, crie um programa em que:
 
-    O usuário informe o valor do serviço por aparelho, a quantidade de aparelhos em manutenção, o percentual de desconto (que pode ser zero) e a quantidade mínima de aparelhos para que o desconto seja dado.
+* O usuário informe o valor do serviço por aparelho, a quantidade de aparelhos em manutenção, o percentual de desconto (que pode ser zero) e a quantidade mínima de aparelhos para que o desconto seja dado.
 
-    Calcule o valor total do serviço a partir do valor por aparelho e da quantidade de aparelhos. Aplique sobre esse valor o desconto, caso a quantidade de aparelhos seja maior que a mínima informada para que haja desconto. Ao fim mostre a mensagem “O serviço de [nome da empresa] custará R$ [total calculado]”.
+* Calcule o valor total do serviço a partir do valor por aparelho e da quantidade de aparelhos. Aplique sobre esse valor o desconto, caso a quantidade de aparelhos seja maior que a mínima informada para que haja desconto. Ao fim mostre a mensagem “O serviço de [nome da empresa] custará R$ [total calculado]”.
 
-    Permita que o usuário informe várias empresas e os outros dados necessários para o cálculo, usando a função/procedimento para mostrar o total orçado de cada empresa. Termine o algoritmo quando o usuário responder ‘N’ à mensagem “Deseja informar novos dados? (S/N)
-
-    Seja possível obter os diferentes valores orçados e verificar o menor valor. Mostre ao final a mensagem “O orçamento de menor valor é o de (nome da empresa) por R$ (menor valor)".
-
+* Permita que o usuário informe várias empresas e os outros dados necessários para o cálculo, usando a função/procedimento para mostrar o total orçado de cada empresa. Termine o algoritmo quando o usuário responder ‘N’ à mensagem “Deseja informar novos dados? (S/N)
+  
+* Seja possível obter os diferentes valores orçados e verificar o menor valor. Mostre ao final a mensagem “O orçamento de menor valor é o de (nome da empresa) por R$ (menor valor)".
 Considere que sempre serão informados ao menos duas empresas. 
 
 Exemplo:
